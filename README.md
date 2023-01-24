@@ -4,24 +4,24 @@
 Основная информация для запуска:
 1. Клонировать реп.
 2. Доп. установка на серверах:
-  A сервер: 
-# apt-get update 
-# sudo apt-get install postgresql-client  
+A сервер:
+# apt-get update
+# sudo apt-get install postgresql-client
 # sudo apt-get install openssh-client openssh-server
 # sudo apt-get install ansible
 # sudo apt-get install sshpass
 B и С сервера:
-# apt-get update 
+# apt-get update
 # sudo apt-get install openssh-client openssh-server
 
 Файл hosts: Изменить адреса/user/pass согласно своим машинам.
-Запуск скрипта в дериктории с файлами: ansible-playbook prog.yaml
-При не подключении к серверам, в дериктории /etc/sudoers.d/ создать файл с именем пользователя, который в сессии, с содержимым:
+Запуск скрипта в директории с файлами: ansible-playbook prog.yaml
+При не подключении к серверам, в директории /etc/sudoers.d/ создать файл с именем пользователя, который в сессии, с содержимым:
 user ALL=(ALL) NOPASSWD: ALL
 
 
 
-Время выполнения полученных пунктов выглядит следюущим образом![image](https://user-images.githubusercontent.com/55352038/214415846-bfc8b6ee-2aa1-4049-a5ba-216087c7c4d7.png)
+Время выполнения полученных пунктов выглядит следующим образом![image](https://user-images.githubusercontent.com/55352038/214415846-bfc8b6ee-2aa1-4049-a5ba-216087c7c4d7.png)
 Первый запуск скрипта, был 40-50 сек.
 
 В своих интересах доделаю работу в ближайшие пару дней. (И для доп. кода в гите)
