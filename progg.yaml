@@ -174,31 +174,31 @@
       createhome: yes
       
    - name: Gen SSH key
-      user:
+     user:
         name: Devops
         generate_ssh_key: yes
         ssh_key_bits: 2048
         ssh_key_file: .ssh/id_rsa
 
-   - name: Add authorized key from id_rsa.pub
-     authorized_key:
+    - name: Add authorized key from id_rsa.pub
+      authorized_key:
       user: Devops
       state: present
       key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 
-   - name: run SQL from C-server
-     become: true
-     become_user: postgres
-     postgresql_query:
-      db: myapp
-      query: "SELECT version()"
-      login_user: developer
-      login_password: "{{ db_password }}"
-      register: sql_data
+    - name: run SQL from C-server
+      become: true
+      become_user: postgres
+      postgresql_query:
+         db: myapp
+         query: "SELECT version()"
+         login_user: developer
+         login_password: "{{ db_password }}"
+         register: sql_data
       
-   - name: print
-     debug: 
-      var: sql_data
+    - name: print
+      debug: 
+        var: sql_data
    
 # Застрял на ошибке, msg": "Failed to set permissions on the temporary files Ansible needs to create when becoming an unprivileged user (rc: 1, err: chown: invalid user: 'postgres'\n}). For information on working around this,
 
