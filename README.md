@@ -16,8 +16,6 @@ A сервер:
 B и С сервера:
 # apt-get update
 # sudo apt-get install openssh-client openssh-server
-Добавить "юзеру" судо права на серверах
-# sudo adduser user sudo 
 
 Файл hosts: <br>
 -Изменить адреса/user/pass согласно своим машинам. <br>
